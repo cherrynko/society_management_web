@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"name": "static",
+			"path": "../../SocietyManagementSystem2/SocietyManagementSystem2/static"
+		},
+		{
+			"name": "smm",
+			"path": ".."
+		}
+	],
+	"settings": {}
+}

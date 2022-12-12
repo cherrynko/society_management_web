@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Knitnet</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel = "stylesheet" href = "{% static 'css/bootstrap.css' %}">
+<!-- jQuery library -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/74f2522d0b.js" crossorigin="anonymous"></script>
+
+    <script>
+        let x = 0;
+        function hide_logo(){
+            x++;
+            if(x%2 != 0){
+                document.getElementById("logo").style.display="none";
+            }
+            else{
+                document.getElementById("logo").style.display="block";
+            }
+        }
+    </script>
+</head>
+<body class="bg-white" style="font-family: Quicksand; height: 100vh;">
+    
+    <nav class="navbar navbar-expand-lg bg-light shadow">
+        <div class="container-fluid">
+            <a id="logo" class="navbar-brand" style="z-index: 2; position: absolute;"><img src="{% static '\media\logo\2.png' %}" width="75" height="75"></a>
+            <button onclick="hide_logo()" style="margin-left: 93%;" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="collapse navbar-collapse nav-link disabled text-muted px-5" style="width: 1%; margin-left: 5%;">Director dashboard</a>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="director_dashboard.html">Home</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li> -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Tasks
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="/add_event">Add new event</a></li>
+                            <li><a class="dropdown-item" href="/events">View all society events</a></li>
+                            <li><a class="dropdown-item" href="/add_budget" id="fin-records">Edit financial records</a></li>
+                            <li><a class="dropdown-item" href="/recruit">Recruit</a></li>
+                            <li><a class="dropdown-item" href="/promotions">Apply for promotion</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" id="contact-HR" href="#">Contact HR</a></li>
+                            <li><a class="dropdown-item" href="/members" id="member-info">View member information</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <button style="border: 0px; background-color: transparent; height: inherit; margin-top: 10px;" type="submit" class="nav-item navbar-nav"><p class="py-1">Sign out</p><i class="fa-solid fa-right-from-bracket nav-link"></i></button>
+            </div>
+        </div>
+      </nav>
+
+      <div id="home-box" style="height: fit-content; width: 30%; margin-top: 10vh; border-radius: 20px; justify-content: center; align-items: center;" class="container shadow-lg bg-white p-3 mb-5 rounded">
+        <div id="home-card" class="card mx-auto gx-5 gy-4" style="width: fit-content; border: 0; padding-bottom: 5px;">
+            <h3 id="home-card-title" class="mx-auto card-title" style="width:fit-content; margin-bottom: 3vh; text-align: center;">Welcome back!</h3> 
+            <img id="home-card-img" class="card-image-top" style="align-self:center" width="150" height="150" src="{% static '\media\images\undraw_dropdown_menu_re_jqqs.svg' %}" alt="Select a task.">
+            <p id="home-card-text" class="card-text" style="text-align: center">Your department needs your help, director! Select a task from the Tasks dropdown above to get to work!</p>
+        </div>
+    </div>
+    
+    <script src="../static/js/bootstrap.bundle.js"></script>
+    <script src="../static/js/Knitnet.js"></script> 
+</body>
+</html>
